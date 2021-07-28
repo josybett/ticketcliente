@@ -1,0 +1,3 @@
+- ## Get Started
+    - [Instalacion](/{{route}}/{{version}}/instalacion)
+    - [Enviroment](/{{route}}/{{version}}/enviroment)
