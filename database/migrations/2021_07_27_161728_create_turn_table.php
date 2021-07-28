@@ -17,6 +17,7 @@ class CreateTurnTable extends Migration
             $table->bigIncrements('id')->comment = 'Llave primaria autoincrementable';
             $table->unsignedInteger('client_id')->comment = 'FK de tabla client';
             $table->unsignedInteger('cat_queues_id')->comment = 'FK de tabla cat_queues';
+            $table->unsignedInteger('ticket')->comment = 'Número del Ticket que corresponde a cada cola';
             $table->timestamps();
             $table->softDeletes();
 

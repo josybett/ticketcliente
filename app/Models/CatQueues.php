@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Turn;
 
 class CatQueues extends Model
 {
@@ -19,4 +20,10 @@ class CatQueues extends Model
         'updated_at',
         'deleted_at'
     ];
+
+    public function turns()
+    {
+       return $this->hasMany(Turn::class, 'cat_queues_id');
+    }
+
 }

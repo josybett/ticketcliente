@@ -15,4 +15,9 @@ class Client extends Model
         'created_at',
         'updated_at'
     ];
+
+    public function turnsClient()
+    {
+       return $this->hasMany(Turn::class, 'client_id');
+    }
 }

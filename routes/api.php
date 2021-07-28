@@ -17,3 +17,19 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::group(['prefix' => 'catqueues', 'namespace' => '\App\Http\Controllers'], function () {
+    Route::get('/', 'CatQueuesController@allCatQueues');
+    Route::get('/{id}', 'CatQueuesController@getByIdCatQueues');
+    Route::post('/', 'CatQueuesController@insertCatQueues');
+    Route::put('/{id}', 'CatQueuesController@updateCatQueues');
+    Route::delete('/{id}', 'CatQueuesController@deleteCatQueues');
+});
+
+Route::group(['prefix' => 'turn', 'namespace' => '\App\Http\Controllers'], function () {
+    Route::get('/', 'TurnController@allTurn');
+    Route::get('/{id}', 'TurnController@getByIdTurn');
+    Route::post('/', 'TurnController@insertTurn');
+    Route::put('/{id}', 'TurnController@updateTurn');
+    Route::delete('/{id}', 'TurnController@deleteTurn');
+});
