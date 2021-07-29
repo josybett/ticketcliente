@@ -18,6 +18,7 @@ class CreateTurnTable extends Migration
             $table->unsignedInteger('client_id')->comment = 'FK de tabla client';
             $table->unsignedInteger('cat_queues_id')->comment = 'FK de tabla cat_queues';
             $table->unsignedInteger('ticket')->comment = 'Número del Ticket que corresponde a cada cola';
+            $table->timestamp('turn_at')->comment = 'Fecha y hora estimada de atención';
             $table->timestamps();
             $table->softDeletes();
 

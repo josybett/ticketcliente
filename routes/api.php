@@ -28,8 +28,6 @@ Route::group(['prefix' => 'catqueues', 'namespace' => '\App\Http\Controllers'], 
 
 Route::group(['prefix' => 'turn', 'namespace' => '\App\Http\Controllers'], function () {
     Route::get('/', 'TurnController@allTurn');
-    Route::get('/{id}', 'TurnController@getByIdTurn');
     Route::post('/', 'TurnController@insertTurn');
-    Route::put('/{id}', 'TurnController@updateTurn');
     Route::delete('/{id}', 'TurnController@deleteTurn');
 });
