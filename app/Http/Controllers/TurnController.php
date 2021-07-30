@@ -111,9 +111,10 @@ class TurnController extends Controller
                     'turn_at' => $turn_at->format('Y-m-d H:i:s')
                 ]);
             }
+            $turn->load('catqueues');
             
             DB::commit();
-            return response()->json(['status' => true, 'response' => $turns ], 200);
+            return response()->json(['status' => true, 'response' => 'Su ticket: Nº '.$turn->ticket.' Cola: '.$turn->catqueues->name ], 200);
         } catch (Exception $e) {
             $exception = $e->getMessage();
             Log::write('TurnController', 'allTurn', $exception, 'Error');

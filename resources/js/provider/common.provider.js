@@ -36,9 +36,9 @@ export const getMany = async (url) => {
 export const insert = async (url, data) => {
   try {
     let response;
-    await axios.post(url, data).then((response) => {
-      if (response.status >= 200 && response.status <= 500) {
-        response = customResponse(response);
+    await axios.post(url, data).then((resp) => {
+      if (resp.status >= 200 && resp.status <= 500) {
+        response = customResponse(resp);
       }
     }).catch(error => {
       return customResponseError(error);

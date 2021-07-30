@@ -1,9 +1,14 @@
-import { useState } from 'react';
+import { useState, Component } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import { ValidatorForm, TextValidator} from 'react-material-ui-form-validator';
+import { insert } from '../../provider/common.provider';
+import { turn_url } from '../../constants/apis';
+import { toast } from 'react-toastify';
+import { connect } from 'react-redux';
+import { changeSetOpen } from '../../redux/actions/drawer.action';
 
-export default function FormularioTurno () {
+function FormularioTurno (props) {
   const [identification, setIdentification] = useState('');
   const [name, setName] = useState('');
 
@@ -21,12 +26,20 @@ export default function FormularioTurno () {
     }
   }
 
-  const onSubmit = event => {
+  const onSubmit = async event => {
     event.preventDefault();
     try {
-
+      const data = {
+        client: {
+          name: name,
+          identification: identification
+        }
+      };
+      const response = await insert(turn_url, data);
+      toast.success(response.response);
+      props.setOpen(false);
     } catch (error) {
-      console.log(error);
+      toast.error(error.message);
     }
   }
 
@@ -65,10 +78,25 @@ export default function FormularioTurno () {
         </Grid>
         <Grid item xs={12}>
           <Button type="submit" variant="contained" color="primary">
-            Primary
+            Solicitar Turno
           </Button>
         </Grid>
       </ValidatorForm>
     </Grid>
   );
-} 
+}
+
+class FormularioTurnoClass extends Component {
+  render() {
+    return <FormularioTurno setOpen={ this.props.changeSetOpen }/>;
+  }
+}
+
+const mapStateToProps = state => ({
+  ...state
+});
+const mapDispatchToProps = dispatch => ({
+  changeSetOpen: (open) => dispatch(changeSetOpen(open))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormularioTurnoClass);
