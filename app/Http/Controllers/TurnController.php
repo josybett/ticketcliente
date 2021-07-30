@@ -19,24 +19,28 @@ class TurnController extends Controller
     public function allTurn(Request $request) {
         try
         {
-            $turns = new Turn();
-            if($request->get('name') != '' && $request->get('name') != null) {
-                $turns = $turns->where('name', 'ilike', '%'.strtolower($request->get('name')).'%');
-            }
-            
-            $turns = $turns->orderBy('created_at','asc');
+            static::verificacionTurno();
 
-            if ($request->get('row') != '' && $request->get('row') != null) {
-                $turns =  $turns->paginate($request->get('row'));
-            } else {
-                $turns =  $turns->paginate(10);
-            }
+            $turns_delete = Turn::withTrashed()->join('client', 'client.id', 'turn.client_id')
+                            ->join('cat_queues', 'cat_queues.id', 'turn.cat_queues_id')
+                            ->whereNotNull('turn.deleted_at')->orderBy('turn.deleted_at','desc')
+                            ->select('turn.*', 'client.name as client', 'cat_queues.name as queues')->limit(5)->get();
 
-            foreach ($turns as $t) :
-                $t->load('catqueues', 'client');
+            $turns_at = Turn::join('client', 'client.id', 'turn.client_id')
+                            ->join('cat_queues', 'cat_queues.id', 'turn.cat_queues_id')
+                            ->orderBy('turn_at','asc')->select('turn.*', 'client.name as client', 'cat_queues.name as queues')
+                            ->limit(5)->get();
+
+            $turns = Array();
+
+            foreach ($turns_delete as $td) :
+                array_push($turns, $td);
+            endforeach;
+
+            foreach ($turns_at as $t) :
+                array_push($turns, $t);
             endforeach;
             
-
             return response()->json(['status' => true, 'response' => $turns ], 200);
         } catch (Exception $e) {
             $exception = $e->getMessage();
@@ -81,21 +85,23 @@ class TurnController extends Controller
                         ->groupBy('cat_queues.id', 'cat_queues.time_queues')
                         ->orderBy(DB::raw("CASE  WHEN max(turn.turn_at) is null THEN now()::TIMESTAMP + cat_queues.time_queues::INTERVAL ELSE max(turn.turn_at)::TIMESTAMP + cat_queues.time_queues::INTERVAL END"), 'ASC')
                         ->get();
-
+                        
+            $cat_id = $catQueue->id;
             if (count($turns) > 0) {
                 if ($turns[0]->time < $date) {
-                    $ticket = Turn::withTrashed()->where('cat_queues_id', $catQueue->id)
+                    $ticket = Turn::withTrashed()->where('cat_queues_id', $cat_id)
                                 ->whereDate('turn_at', $carbon->format('Y-m-d'))->max('ticket');
                     $turn_at = $carbon->addMinutes(number_format($catQueue->time_queues)); 
                 } else {
-                    $ticket = Turn::withTrashed()->where('cat_queues_id', $turns[0]->cat_queues_id)
+                    $cat_id = $turns[0]->id;
+                    $ticket = Turn::withTrashed()->where('cat_queues_id', $cat_id)
                                 ->whereDate('turn_at', $carbon->format('Y-m-d'))->max('ticket');
                     $turn_at = new Carbon($turns[0]->time);
                 }
 
                 $turn = Turn::create([
                     'client_id' => $client->id,
-                    'cat_queues_id' => $turns[0]->id,
+                    'cat_queues_id' => $cat_id,
                     'ticket' => number_format($ticket + 1),
                     'turn_at' => $turn_at->format('Y-m-d H:i:s')
                 ]);
@@ -106,7 +112,7 @@ class TurnController extends Controller
 
                 $turn = Turn::create([
                     'client_id' => $client->id,
-                    'cat_queues_id' => $turns[0]->id,
+                    'cat_queues_id' => $cat_id,
                     'ticket' => number_format($ticket + 1),
                     'turn_at' => $turn_at->format('Y-m-d H:i:s')
                 ]);
@@ -126,17 +132,45 @@ class TurnController extends Controller
     /**
      * Función para eliminar ticket una cola
      */
-    public function deleteTurn(Request $request, $id) {
+    protected static function deleteTurn($id) {
         try
         {
             Turn::where('id', $id)->delete();
 
-            return response()->json(['status' => true, 'response' => 'Eliminado con éxito' ], 200);
+            return true;
         } catch (Exception $e) {
             $exception = $e->getMessage();
             Log::write('TurnController', 'deleteTurn', $exception, 'Error');
 
-            return response()->json(['status' => false, 'response' => $exception], 500);
+            return false;
+        }
+    }
+
+    /**
+     * Función para comparar los turnos y cambiar
+     */
+    protected static function verificacionTurno() {
+        try
+        {
+            $date = Date('Y-m-d H:i:s');
+            $carbon = new Carbon($date);            
+            $turns = Turn::orderBy('turn_at','asc')->limit(5)->get();
+
+            foreach($turns as $v):
+                $comparar = new Carbon($v->turn_at);
+                $seconds_diff= $carbon->diffInSeconds($comparar);
+            Log::write('TurnController', 'deleteTurn', $seconds_diff, 'Info');
+                if ($seconds_diff <= 5 || $carbon >= $comparar) {
+                    static::deleteTurn($v->id);
+                }
+            endforeach;
+
+            return true;
+        } catch (Exception $e) {
+            $exception = $e->getMessage();
+            Log::write('TurnController', 'deleteTurn', $exception, 'Error');
+
+            return false;
         }
     }
 }

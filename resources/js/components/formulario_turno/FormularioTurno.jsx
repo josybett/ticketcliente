@@ -7,10 +7,47 @@ import { turn_url } from '../../constants/apis';
 import { toast } from 'react-toastify';
 import { connect } from 'react-redux';
 import { changeSetOpen } from '../../redux/actions/drawer.action';
+import { makeStyles } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import FingerprintIcon from '@material-ui/icons/Fingerprint';
+import PermIdentityIcon from '@material-ui/icons/PermIdentity';
+import InputAdornment from '@material-ui/core/InputAdornment';
+
+const useStyles = makeStyles((_) => ({
+  root: {
+    minWidth: '400px',
+    padding: '15px',
+    marginTop: '100px',
+    display: 'block'
+  },
+  titulo: {
+    fontFamily: 'Nunito',
+    fontWeight: 'bold',
+    marginBottom: '15px',
+    textAlign: 'center',
+    fontSize: '1.5em'
+  },
+  input: {
+    width: '100%',
+    marginBottom: '15px'
+  },
+  boton: {
+    backgroundColor: '#FF9703',
+    width: '100%',
+    color: '#FFF',
+    padding: '15px',
+    '& .MuiButton-label': {
+      fontFamily: 'Nunito',
+      fontWeight: 'bold',
+      fontSize: '1.2em'
+    }
+  }
+}));
 
 function FormularioTurno (props) {
   const [identification, setIdentification] = useState('');
   const [name, setName] = useState('');
+  const classes = useStyles();
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -44,12 +81,17 @@ function FormularioTurno (props) {
   }
 
   return (
-    <Grid container>
+    <Grid container className={classes.root}>
       <ValidatorForm
         onSubmit={onSubmit}
         onError={errors => console.log(errors)}
         className="drawer-div"
       >
+        <Grid item xs={12}>
+          <Typography component="h3" className={classes.titulo}>
+            Solicitud de Ticket!
+          </Typography>
+        </Grid>
         <Grid item xs={12}>
           <TextValidator
             label="Identificación"
@@ -59,8 +101,15 @@ function FormularioTurno (props) {
             validators={['required']}
             errorMessages={['Este dato es obligatorio']}
             variant="outlined"
-            className="form-field"
+            className={classes.input}
             autoComplete="off"
+            InputProps={{
+              startAdornment : (
+                <InputAdornment position="start">
+                  <FingerprintIcon />
+                </InputAdornment>
+              )
+            }}  
           />
         </Grid>
         <Grid item xs={12}>
@@ -72,12 +121,19 @@ function FormularioTurno (props) {
             validators={['required']}
             errorMessages={['Este dato es obligatorio']}
             variant="outlined"
-            className="form-field"
+            className={classes.input}
             autoComplete="off"
+            InputProps={{
+              startAdornment : (
+                <InputAdornment position="start">
+                  <PermIdentityIcon />
+                </InputAdornment>
+              )
+            }} 
           />
         </Grid>
         <Grid item xs={12}>
-          <Button type="submit" variant="contained" color="primary">
+          <Button type="submit" variant="contained" className={classes.boton}>
             Solicitar Turno
           </Button>
         </Grid>

@@ -6,6 +6,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import DoneAllIcon from '@material-ui/icons/DoneAll';
+import ScheduleIcon from '@material-ui/icons/Schedule';
 
 const useStyles = makeStyles((_) => ({
   table: {
@@ -30,18 +32,10 @@ const StyledTableRow = withStyles((theme) => ({
     },
   },
 }))(TableRow);
-  
-function createData(ticket, name, turn_at) {
-  return { ticket, name, turn_at};
-}
-  
-const rows = [
-  createData('Cola 1 - Nº 1', 'Pepe', '2021-07-28 21:00:39'),
-  createData('Cola 2 - Nº 1', 'Pepe', '2021-07-28 20:54:33'),
-];
 
-export default function TablaTurno() {
+export default function TablaTurno(props) {
   const classes = useStyles();
+  const { data } = props;
 
   return (
     <TableContainer component={Paper}>
@@ -51,16 +45,22 @@ export default function TablaTurno() {
             <StyledTableCell>Tickect&nbsp;Cola</StyledTableCell>
             <StyledTableCell align="right">Usuario</StyledTableCell>
             <StyledTableCell align="right">Hora&nbsp;Turno</StyledTableCell>
+            <StyledTableCell align="right">Status</StyledTableCell>
             </TableRow>
         </TableHead>
         <TableBody>
-            {rows.map((row) => (
-            <StyledTableRow key={row.ticket}>
+            {data.map((row) => (
+            <StyledTableRow key={row.id}>
                 <StyledTableCell component="th" scope="row">
-                {row.ticket}
+                {`${row.queues} - Nº ${row.ticket}`}
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.name}</StyledTableCell>
+                <StyledTableCell align="right">{row.client}</StyledTableCell>
                 <StyledTableCell align="right">{row.turn_at}</StyledTableCell>
+                <StyledTableCell align="right">
+                  { row.deleted_at ?
+                    <DoneAllIcon style={{ color: 'green' }} /> : <ScheduleIcon style={{ color: 'red' }} />
+                  }
+                </StyledTableCell>
             </StyledTableRow>
             ))}
         </TableBody>

@@ -4837,6 +4837,169 @@ Grow.muiSupportAuto = true;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/InputAdornment/InputAdornment.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/InputAdornment/InputAdornment.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "styles": () => (/* binding */ styles),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _Typography__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../Typography */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _FormControl_FormControlContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../FormControl/FormControlContext */ "./node_modules/@material-ui/core/esm/FormControl/FormControlContext.js");
+
+
+
+
+
+
+
+
+var styles = {
+  /* Styles applied to the root element. */
+  root: {
+    display: 'flex',
+    height: '0.01em',
+    // Fix IE 11 flexbox alignment. To remove at some point.
+    maxHeight: '2em',
+    alignItems: 'center',
+    whiteSpace: 'nowrap'
+  },
+
+  /* Styles applied to the root element if `variant="filled"`. */
+  filled: {
+    '&$positionStart:not($hiddenLabel)': {
+      marginTop: 16
+    }
+  },
+
+  /* Styles applied to the root element if `position="start"`. */
+  positionStart: {
+    marginRight: 8
+  },
+
+  /* Styles applied to the root element if `position="end"`. */
+  positionEnd: {
+    marginLeft: 8
+  },
+
+  /* Styles applied to the root element if `disablePointerEvents=true`. */
+  disablePointerEvents: {
+    pointerEvents: 'none'
+  },
+
+  /* Styles applied if the adornment is used inside <FormControl hiddenLabel />. */
+  hiddenLabel: {},
+
+  /* Styles applied if the adornment is used inside <FormControl margin="dense" />. */
+  marginDense: {}
+};
+var InputAdornment = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function InputAdornment(props, ref) {
+  var children = props.children,
+      classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'div' : _props$component,
+      _props$disablePointer = props.disablePointerEvents,
+      disablePointerEvents = _props$disablePointer === void 0 ? false : _props$disablePointer,
+      _props$disableTypogra = props.disableTypography,
+      disableTypography = _props$disableTypogra === void 0 ? false : _props$disableTypogra,
+      position = props.position,
+      variantProp = props.variant,
+      other = (0,_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__.default)(props, ["children", "classes", "className", "component", "disablePointerEvents", "disableTypography", "position", "variant"]);
+
+  var muiFormControl = (0,_FormControl_FormControlContext__WEBPACK_IMPORTED_MODULE_5__.useFormControl)() || {};
+  var variant = variantProp;
+
+  if (variantProp && muiFormControl.variant) {
+    if (true) {
+      if (variantProp === muiFormControl.variant) {
+        console.error('Material-UI: The `InputAdornment` variant infers the variant prop ' + 'you do not have to provide one.');
+      }
+    }
+  }
+
+  if (muiFormControl && !variant) {
+    variant = muiFormControl.variant;
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_FormControl_FormControlContext__WEBPACK_IMPORTED_MODULE_5__.default.Provider, {
+    value: null
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({
+    className: (0,clsx__WEBPACK_IMPORTED_MODULE_4__.default)(classes.root, className, position === 'end' ? classes.positionEnd : classes.positionStart, disablePointerEvents && classes.disablePointerEvents, muiFormControl.hiddenLabel && classes.hiddenLabel, variant === 'filled' && classes.filled, muiFormControl.margin === 'dense' && classes.marginDense),
+    ref: ref
+  }, other), typeof children === 'string' && !disableTypography ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(_Typography__WEBPACK_IMPORTED_MODULE_6__.default, {
+    color: "textSecondary"
+  }, children) : children));
+});
+ true ? InputAdornment.propTypes = {
+  /**
+   * The content of the component, normally an `IconButton` or string.
+   */
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().node.isRequired),
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object.isRequired),
+
+  /**
+   * @ignore
+   */
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   */
+  component: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().elementType),
+
+  /**
+   * Disable pointer events on the root.
+   * This allows for the content of the adornment to focus the input on click.
+   */
+  disablePointerEvents: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
+
+  /**
+   * If children is a string then disable wrapping in a Typography component.
+   */
+  disableTypography: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
+
+  /**
+   * @ignore
+   */
+  muiFormControl: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object),
+
+  /**
+   * The position this adornment should appear relative to the `Input`.
+   */
+  position: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(['start', 'end']).isRequired,
+
+  /**
+   * The variant to use.
+   * Note: If you are using the `TextField` component or the `FormControl` component
+   * you do not have to set this manually.
+   */
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(['standard', 'outlined', 'filled'])
+} : 0;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_styles_withStyles__WEBPACK_IMPORTED_MODULE_7__.default)(styles, {
+  name: 'MuiInputAdornment'
+})(InputAdornment));
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/InputBase/InputBase.js":
 /*!*******************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/InputBase/InputBase.js ***!
@@ -12330,6 +12493,281 @@ var TextareaAutosize = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRe
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/Typography/Typography.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Typography/Typography.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "styles": () => (/* binding */ styles),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var _babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _utils_capitalize__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../utils/capitalize */ "./node_modules/@material-ui/core/esm/utils/capitalize.js");
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      margin: 0
+    },
+
+    /* Styles applied to the root element if `variant="body2"`. */
+    body2: theme.typography.body2,
+
+    /* Styles applied to the root element if `variant="body1"`. */
+    body1: theme.typography.body1,
+
+    /* Styles applied to the root element if `variant="caption"`. */
+    caption: theme.typography.caption,
+
+    /* Styles applied to the root element if `variant="button"`. */
+    button: theme.typography.button,
+
+    /* Styles applied to the root element if `variant="h1"`. */
+    h1: theme.typography.h1,
+
+    /* Styles applied to the root element if `variant="h2"`. */
+    h2: theme.typography.h2,
+
+    /* Styles applied to the root element if `variant="h3"`. */
+    h3: theme.typography.h3,
+
+    /* Styles applied to the root element if `variant="h4"`. */
+    h4: theme.typography.h4,
+
+    /* Styles applied to the root element if `variant="h5"`. */
+    h5: theme.typography.h5,
+
+    /* Styles applied to the root element if `variant="h6"`. */
+    h6: theme.typography.h6,
+
+    /* Styles applied to the root element if `variant="subtitle1"`. */
+    subtitle1: theme.typography.subtitle1,
+
+    /* Styles applied to the root element if `variant="subtitle2"`. */
+    subtitle2: theme.typography.subtitle2,
+
+    /* Styles applied to the root element if `variant="overline"`. */
+    overline: theme.typography.overline,
+
+    /* Styles applied to the root element if `variant="srOnly"`. Only accessible to screen readers. */
+    srOnly: {
+      position: 'absolute',
+      height: 1,
+      width: 1,
+      overflow: 'hidden'
+    },
+
+    /* Styles applied to the root element if `align="left"`. */
+    alignLeft: {
+      textAlign: 'left'
+    },
+
+    /* Styles applied to the root element if `align="center"`. */
+    alignCenter: {
+      textAlign: 'center'
+    },
+
+    /* Styles applied to the root element if `align="right"`. */
+    alignRight: {
+      textAlign: 'right'
+    },
+
+    /* Styles applied to the root element if `align="justify"`. */
+    alignJustify: {
+      textAlign: 'justify'
+    },
+
+    /* Styles applied to the root element if `nowrap={true}`. */
+    noWrap: {
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      whiteSpace: 'nowrap'
+    },
+
+    /* Styles applied to the root element if `gutterBottom={true}`. */
+    gutterBottom: {
+      marginBottom: '0.35em'
+    },
+
+    /* Styles applied to the root element if `paragraph={true}`. */
+    paragraph: {
+      marginBottom: 16
+    },
+
+    /* Styles applied to the root element if `color="inherit"`. */
+    colorInherit: {
+      color: 'inherit'
+    },
+
+    /* Styles applied to the root element if `color="primary"`. */
+    colorPrimary: {
+      color: theme.palette.primary.main
+    },
+
+    /* Styles applied to the root element if `color="secondary"`. */
+    colorSecondary: {
+      color: theme.palette.secondary.main
+    },
+
+    /* Styles applied to the root element if `color="textPrimary"`. */
+    colorTextPrimary: {
+      color: theme.palette.text.primary
+    },
+
+    /* Styles applied to the root element if `color="textSecondary"`. */
+    colorTextSecondary: {
+      color: theme.palette.text.secondary
+    },
+
+    /* Styles applied to the root element if `color="error"`. */
+    colorError: {
+      color: theme.palette.error.main
+    },
+
+    /* Styles applied to the root element if `display="inline"`. */
+    displayInline: {
+      display: 'inline'
+    },
+
+    /* Styles applied to the root element if `display="block"`. */
+    displayBlock: {
+      display: 'block'
+    }
+  };
+};
+var defaultVariantMapping = {
+  h1: 'h1',
+  h2: 'h2',
+  h3: 'h3',
+  h4: 'h4',
+  h5: 'h5',
+  h6: 'h6',
+  subtitle1: 'h6',
+  subtitle2: 'h6',
+  body1: 'p',
+  body2: 'p'
+};
+var Typography = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.forwardRef(function Typography(props, ref) {
+  var _props$align = props.align,
+      align = _props$align === void 0 ? 'inherit' : _props$align,
+      classes = props.classes,
+      className = props.className,
+      _props$color = props.color,
+      color = _props$color === void 0 ? 'initial' : _props$color,
+      component = props.component,
+      _props$display = props.display,
+      display = _props$display === void 0 ? 'initial' : _props$display,
+      _props$gutterBottom = props.gutterBottom,
+      gutterBottom = _props$gutterBottom === void 0 ? false : _props$gutterBottom,
+      _props$noWrap = props.noWrap,
+      noWrap = _props$noWrap === void 0 ? false : _props$noWrap,
+      _props$paragraph = props.paragraph,
+      paragraph = _props$paragraph === void 0 ? false : _props$paragraph,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'body1' : _props$variant,
+      _props$variantMapping = props.variantMapping,
+      variantMapping = _props$variantMapping === void 0 ? defaultVariantMapping : _props$variantMapping,
+      other = (0,_babel_runtime_helpers_esm_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__.default)(props, ["align", "classes", "className", "color", "component", "display", "gutterBottom", "noWrap", "paragraph", "variant", "variantMapping"]);
+
+  var Component = component || (paragraph ? 'p' : variantMapping[variant] || defaultVariantMapping[variant]) || 'span';
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__.default)({
+    className: (0,clsx__WEBPACK_IMPORTED_MODULE_4__.default)(classes.root, className, variant !== 'inherit' && classes[variant], color !== 'initial' && classes["color".concat((0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_5__.default)(color))], noWrap && classes.noWrap, gutterBottom && classes.gutterBottom, paragraph && classes.paragraph, align !== 'inherit' && classes["align".concat((0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_5__.default)(align))], display !== 'initial' && classes["display".concat((0,_utils_capitalize__WEBPACK_IMPORTED_MODULE_5__.default)(display))]),
+    ref: ref
+  }, other));
+});
+ true ? Typography.propTypes = {
+  /**
+   * Set the text-align on the component.
+   */
+  align: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(['inherit', 'left', 'center', 'right', 'justify']),
+
+  /**
+   * The content of the component.
+   */
+  children: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().node),
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object.isRequired),
+
+  /**
+   * @ignore
+   */
+  className: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
+
+  /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */
+  color: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(['initial', 'inherit', 'primary', 'secondary', 'textPrimary', 'textSecondary', 'error']),
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a HTML element or a component.
+   * Overrides the behavior of the `variantMapping` prop.
+   */
+  component: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().elementType),
+
+  /**
+   * Controls the display type
+   */
+  display: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(['initial', 'block', 'inline']),
+
+  /**
+   * If `true`, the text will have a bottom margin.
+   */
+  gutterBottom: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
+
+  /**
+   * If `true`, the text will not wrap, but instead will truncate with a text overflow ellipsis.
+   *
+   * Note that text overflow can only happen with block or inline-block level elements
+   * (the element needs to have a width in order to overflow).
+   */
+  noWrap: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
+
+  /**
+   * If `true`, the text will have a bottom margin.
+   */
+  paragraph: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool),
+
+  /**
+   * Applies the theme typography styles.
+   */
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'subtitle1', 'subtitle2', 'body1', 'body2', 'caption', 'button', 'overline', 'srOnly', 'inherit']),
+
+  /**
+   * The component maps the variant prop to a range of different HTML element types.
+   * For instance, subtitle1 to `<h6>`.
+   * If you wish to change that mapping, you can provide your own.
+   * Alternatively, you can use the `component` prop.
+   */
+  variantMapping: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object)
+} : 0;
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,_styles_withStyles__WEBPACK_IMPORTED_MODULE_6__.default)(styles, {
+  name: 'MuiTypography'
+})(Typography));
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/Unstable_TrapFocus/Unstable_TrapFocus.js":
 /*!*************************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/Unstable_TrapFocus/Unstable_TrapFocus.js ***!
@@ -14958,6 +15396,128 @@ var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/crea
 var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
   d: "M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
 }), 'Add');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/DoneAll.js":
+/*!****************************************************!*\
+  !*** ./node_modules/@material-ui/icons/DoneAll.js ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M18 7l-1.41-1.41-6.34 6.34 1.41 1.41L18 7zm4.24-1.41L11.66 16.17 7.48 12l-1.41 1.41L11.66 19l12-12-1.42-1.41zM.41 13.41L6 19l1.41-1.41L1.83 12 .41 13.41z"
+}), 'DoneAll');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Fingerprint.js":
+/*!********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Fingerprint.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M17.81 4.47c-.08 0-.16-.02-.23-.06C15.66 3.42 14 3 12.01 3c-1.98 0-3.86.47-5.57 1.41-.24.13-.54.04-.68-.2-.13-.24-.04-.55.2-.68C7.82 2.52 9.86 2 12.01 2c2.13 0 3.99.47 6.03 1.52.25.13.34.43.21.67-.09.18-.26.28-.44.28zM3.5 9.72c-.1 0-.2-.03-.29-.09-.23-.16-.28-.47-.12-.7.99-1.4 2.25-2.5 3.75-3.27C9.98 4.04 14 4.03 17.15 5.65c1.5.77 2.76 1.86 3.75 3.25.16.22.11.54-.12.7-.23.16-.54.11-.7-.12-.9-1.26-2.04-2.25-3.39-2.94-2.87-1.47-6.54-1.47-9.4.01-1.36.7-2.5 1.7-3.4 2.96-.08.14-.23.21-.39.21zm6.25 12.07c-.13 0-.26-.05-.35-.15-.87-.87-1.34-1.43-2.01-2.64-.69-1.23-1.05-2.73-1.05-4.34 0-2.97 2.54-5.39 5.66-5.39s5.66 2.42 5.66 5.39c0 .28-.22.5-.5.5s-.5-.22-.5-.5c0-2.42-2.09-4.39-4.66-4.39-2.57 0-4.66 1.97-4.66 4.39 0 1.44.32 2.77.93 3.85.64 1.15 1.08 1.64 1.85 2.42.19.2.19.51 0 .71-.11.1-.24.15-.37.15zm7.17-1.85c-1.19 0-2.24-.3-3.1-.89-1.49-1.01-2.38-2.65-2.38-4.39 0-.28.22-.5.5-.5s.5.22.5.5c0 1.41.72 2.74 1.94 3.56.71.48 1.54.71 2.54.71.24 0 .64-.03 1.04-.1.27-.05.53.13.58.41.05.27-.13.53-.41.58-.57.11-1.07.12-1.21.12zM14.91 22c-.04 0-.09-.01-.13-.02-1.59-.44-2.63-1.03-3.72-2.1-1.4-1.39-2.17-3.24-2.17-5.22 0-1.62 1.38-2.94 3.08-2.94 1.7 0 3.08 1.32 3.08 2.94 0 1.07.93 1.94 2.08 1.94s2.08-.87 2.08-1.94c0-3.77-3.25-6.83-7.25-6.83-2.84 0-5.44 1.58-6.61 4.03-.39.81-.59 1.76-.59 2.8 0 .78.07 2.01.67 3.61.1.26-.03.55-.29.64-.26.1-.55-.04-.64-.29-.49-1.31-.73-2.61-.73-3.96 0-1.2.23-2.29.68-3.24 1.33-2.79 4.28-4.6 7.51-4.6 4.55 0 8.25 3.51 8.25 7.83 0 1.62-1.38 2.94-3.08 2.94s-3.08-1.32-3.08-2.94c0-1.07-.93-1.94-2.08-1.94s-2.08.87-2.08 1.94c0 1.71.66 3.31 1.87 4.51.95.94 1.86 1.46 3.27 1.85.27.07.42.35.35.61-.05.23-.26.38-.47.38z"
+}), 'Fingerprint');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/PermIdentity.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/icons/PermIdentity.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement("path", {
+  d: "M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z"
+}), 'PermIdentity');
+
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/icons/Schedule.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/@material-ui/icons/Schedule.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+
+var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
+
+var _interopRequireWildcard = __webpack_require__(/*! @babel/runtime/helpers/interopRequireWildcard */ "./node_modules/@babel/runtime/helpers/interopRequireWildcard.js");
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports.default = void 0;
+
+var React = _interopRequireWildcard(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
+
+var _default = (0, _createSvgIcon.default)( /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+  d: "M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+}), /*#__PURE__*/React.createElement("path", {
+  d: "M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+})), 'Schedule');
 
 exports.default = _default;
 
@@ -18711,14 +19271,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_core_Button__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/Button.js");
 /* harmony import */ var react_material_ui_form_validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-material-ui-form-validator */ "./node_modules/react-material-ui-form-validator/lib/index.js");
 /* harmony import */ var _provider_common_provider__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../provider/common.provider */ "./resources/js/provider/common.provider.js");
 /* harmony import */ var _constants_apis__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../constants/apis */ "./resources/js/constants/apis.js");
-/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.js");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _redux_actions_drawer_action__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../redux/actions/drawer.action */ "./resources/js/redux/actions/drawer.action.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony import */ var _material_ui_icons_Fingerprint__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/icons/Fingerprint */ "./node_modules/@material-ui/icons/Fingerprint.js");
+/* harmony import */ var _material_ui_icons_PermIdentity__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @material-ui/icons/PermIdentity */ "./node_modules/@material-ui/icons/PermIdentity.js");
+/* harmony import */ var _material_ui_core_InputAdornment__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/InputAdornment */ "./node_modules/@material-ui/core/esm/InputAdornment/InputAdornment.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -18778,6 +19343,43 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
+
+
+var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__.default)(function (_) {
+  return {
+    root: {
+      minWidth: '400px',
+      padding: '15px',
+      marginTop: '100px',
+      display: 'block'
+    },
+    titulo: {
+      fontFamily: 'Nunito',
+      fontWeight: 'bold',
+      marginBottom: '15px',
+      textAlign: 'center',
+      fontSize: '1.5em'
+    },
+    input: {
+      width: '100%',
+      marginBottom: '15px'
+    },
+    boton: {
+      backgroundColor: '#FF9703',
+      width: '100%',
+      color: '#FFF',
+      padding: '15px',
+      '& .MuiButton-label': {
+        fontFamily: 'Nunito',
+        fontWeight: 'bold',
+        fontSize: '1.2em'
+      }
+    }
+  };
+});
+
 function FormularioTurno(props) {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
@@ -18788,6 +19390,8 @@ function FormularioTurno(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       name = _useState4[0],
       setName = _useState4[1];
+
+  var classes = useStyles();
 
   var handleChange = function handleChange(event) {
     var _event$target = event.target,
@@ -18828,7 +19432,7 @@ function FormularioTurno(props) {
 
             case 5:
               response = _context.sent;
-              react_toastify__WEBPACK_IMPORTED_MODULE_8__.toast.success(response.response);
+              react_toastify__WEBPACK_IMPORTED_MODULE_9__.toast.success(response.response);
               props.setOpen(false);
               _context.next = 13;
               break;
@@ -18836,7 +19440,7 @@ function FormularioTurno(props) {
             case 10:
               _context.prev = 10;
               _context.t0 = _context["catch"](1);
-              react_toastify__WEBPACK_IMPORTED_MODULE_8__.toast.error(_context.t0.message);
+              react_toastify__WEBPACK_IMPORTED_MODULE_9__.toast.error(_context.t0.message);
 
             case 13:
             case "end":
@@ -18851,15 +19455,24 @@ function FormularioTurno(props) {
     };
   }();
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__.default, {
     container: true,
+    className: classes.root,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_material_ui_form_validator__WEBPACK_IMPORTED_MODULE_2__.ValidatorForm, {
       onSubmit: onSubmit,
       onError: function onError(errors) {
         return console.log(errors);
       },
       className: "drawer-div",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__.default, {
+        item: true,
+        xs: 12,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_11__.default, {
+          component: "h3",
+          className: classes.titulo,
+          children: "Solicitud de Ticket!"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__.default, {
         item: true,
         xs: 12,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_material_ui_form_validator__WEBPACK_IMPORTED_MODULE_2__.TextValidator, {
@@ -18870,10 +19483,16 @@ function FormularioTurno(props) {
           validators: ['required'],
           errorMessages: ['Este dato es obligatorio'],
           variant: "outlined",
-          className: "form-field",
-          autoComplete: "off"
+          className: classes.input,
+          autoComplete: "off",
+          InputProps: {
+            startAdornment: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_InputAdornment__WEBPACK_IMPORTED_MODULE_12__.default, {
+              position: "start",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_Fingerprint__WEBPACK_IMPORTED_MODULE_13__.default, {})
+            })
+          }
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__.default, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__.default, {
         item: true,
         xs: 12,
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(react_material_ui_form_validator__WEBPACK_IMPORTED_MODULE_2__.TextValidator, {
@@ -18884,16 +19503,22 @@ function FormularioTurno(props) {
           validators: ['required'],
           errorMessages: ['Este dato es obligatorio'],
           variant: "outlined",
-          className: "form-field",
-          autoComplete: "off"
+          className: classes.input,
+          autoComplete: "off",
+          InputProps: {
+            startAdornment: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_InputAdornment__WEBPACK_IMPORTED_MODULE_12__.default, {
+              position: "start",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_icons_PermIdentity__WEBPACK_IMPORTED_MODULE_14__.default, {})
+            })
+          }
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_9__.default, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__.default, {
         item: true,
         xs: 12,
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_10__.default, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Button__WEBPACK_IMPORTED_MODULE_15__.default, {
           type: "submit",
           variant: "contained",
-          color: "primary",
+          className: classes.boton,
           children: "Solicitar Turno"
         })
       })]
@@ -18976,7 +19601,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _material_ui_core_TableHead__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/TableHead */ "./node_modules/@material-ui/core/esm/TableHead/TableHead.js");
 /* harmony import */ var _material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core/TableRow */ "./node_modules/@material-ui/core/esm/TableRow/TableRow.js");
 /* harmony import */ var _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core/Paper */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
+/* harmony import */ var _material_ui_icons_DoneAll__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/icons/DoneAll */ "./node_modules/@material-ui/icons/DoneAll.js");
+/* harmony import */ var _material_ui_icons_Schedule__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/icons/Schedule */ "./node_modules/@material-ui/icons/Schedule.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
 
 
 
@@ -19014,18 +19643,9 @@ var StyledTableRow = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.de
     }
   };
 })(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_4__.default);
-
-function createData(ticket, name, turn_at) {
-  return {
-    ticket: ticket,
-    name: name,
-    turn_at: turn_at
-  };
-}
-
-var rows = [createData('Cola 1 - Nº 1', 'Pepe', '2021-07-28 21:00:39'), createData('Cola 2 - Nº 1', 'Pepe', '2021-07-28 20:54:33')];
-function TablaTurno() {
+function TablaTurno(props) {
   var classes = useStyles();
+  var data = props.data;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_TableContainer__WEBPACK_IMPORTED_MODULE_5__.default, {
     component: _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_6__.default,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_7__.default, {
@@ -19041,23 +19661,37 @@ function TablaTurno() {
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(StyledTableCell, {
             align: "right",
             children: "Hora\xA0Turno"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(StyledTableCell, {
+            align: "right",
+            children: "Status"
           })]
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_TableBody__WEBPACK_IMPORTED_MODULE_9__.default, {
-        children: rows.map(function (row) {
+        children: data.map(function (row) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(StyledTableRow, {
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(StyledTableCell, {
               component: "th",
               scope: "row",
-              children: row.ticket
+              children: "".concat(row.queues, " - N\xBA ").concat(row.ticket)
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(StyledTableCell, {
               align: "right",
-              children: row.name
+              children: row.client
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(StyledTableCell, {
               align: "right",
               children: row.turn_at
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(StyledTableCell, {
+              align: "right",
+              children: row.deleted_at ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_icons_DoneAll__WEBPACK_IMPORTED_MODULE_10__.default, {
+                style: {
+                  color: 'green'
+                }
+              }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_icons_Schedule__WEBPACK_IMPORTED_MODULE_11__.default, {
+                style: {
+                  color: 'red'
+                }
+              })
             })]
-          }, row.ticket);
+          }, row.id);
         })
       })]
     })
@@ -19139,8 +19773,15 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__.default
   return {
     addButton: {
       position: 'absolute',
-      bottom: 0,
-      right: 0
+      bottom: 30,
+      right: 30,
+      backgroundColor: '#FF9703',
+      color: '#FFF',
+      '& .MuiFab-label': {
+        '& .MuiSvgIcon-root': {
+          fontSize: '2.5em'
+        }
+      }
     }
   };
 });
@@ -19291,22 +19932,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _components_tabla_turno__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/tabla_turno */ "./resources/js/components/tabla_turno/index.js");
-/* harmony import */ var _components_turno_boton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/turno_boton */ "./resources/js/components/turno_boton/index.js");
-/* harmony import */ var _material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core/Drawer */ "./node_modules/@material-ui/core/esm/Drawer/Drawer.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _redux_actions_drawer_action__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../redux/actions/drawer.action */ "./resources/js/redux/actions/drawer.action.js");
-/* harmony import */ var _components_formulario_turno__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/formulario_turno */ "./resources/js/components/formulario_turno/index.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core/Grid */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _components_tabla_turno__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/tabla_turno */ "./resources/js/components/tabla_turno/index.js");
+/* harmony import */ var _components_turno_boton__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/turno_boton */ "./resources/js/components/turno_boton/index.js");
+/* harmony import */ var _material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @material-ui/core/Drawer */ "./node_modules/@material-ui/core/esm/Drawer/Drawer.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _redux_actions_drawer_action__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../redux/actions/drawer.action */ "./resources/js/redux/actions/drawer.action.js");
+/* harmony import */ var _components_formulario_turno__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/formulario_turno */ "./resources/js/components/formulario_turno/index.js");
+/* harmony import */ var _constants_apis__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../constants/apis */ "./resources/js/constants/apis.js");
+/* harmony import */ var _provider_common_provider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../provider/common.provider */ "./resources/js/provider/common.provider.js");
+/* harmony import */ var _material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core/styles */ "./node_modules/@material-ui/core/esm/styles/makeStyles.js");
+/* harmony import */ var _material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -19328,6 +19979,7 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
 
@@ -19338,24 +19990,53 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
+
+
+
+var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_10__.default)(function () {
+  return {
+    table: {
+      position: 'absolute',
+      top: '15%'
+    },
+    titulo: {
+      fontFamily: 'Nunito',
+      fontWeight: 'bold',
+      marginBottom: '15px',
+      textAlign: 'center',
+      fontSize: '1.5em'
+    }
+  };
+});
 
 function Layout(props) {
+  var classes = useStyles();
+
   var toggleDrawer = function toggleDrawer(_) {
     props.setOpen(false);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__.default, {
     container: true,
     justifyContent: "center",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_7__.default, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_11__.default, {
       item: true,
       xs: 6,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_tabla_turno__WEBPACK_IMPORTED_MODULE_1__.default, {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_turno_boton__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_8__.default, {
+      className: classes.table,
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Typography__WEBPACK_IMPORTED_MODULE_12__.default, {
+        comnponent: "h3",
+        className: classes.titulo,
+        children: "TURNOS"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_tabla_turno__WEBPACK_IMPORTED_MODULE_2__.default, {
+        data: props.data
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_turno_boton__WEBPACK_IMPORTED_MODULE_3__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_material_ui_core_Drawer__WEBPACK_IMPORTED_MODULE_13__.default, {
       anchor: "left",
       open: props.open,
       onClose: toggleDrawer,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_formulario_turno__WEBPACK_IMPORTED_MODULE_5__.default, {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_formulario_turno__WEBPACK_IMPORTED_MODULE_6__.default, {})
     })]
   });
 }
@@ -19365,24 +20046,75 @@ var LayoutClass = /*#__PURE__*/function (_Component) {
 
   var _super = _createSuper(LayoutClass);
 
-  function LayoutClass() {
+  function LayoutClass(props) {
+    var _this;
+
     _classCallCheck(this, LayoutClass);
 
-    return _super.apply(this, arguments);
+    _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "getData", /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee() {
+      var all;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              _context.next = 3;
+              return (0,_provider_common_provider__WEBPACK_IMPORTED_MODULE_8__.getMany)(_constants_apis__WEBPACK_IMPORTED_MODULE_7__.turn_url);
+
+            case 3:
+              all = _context.sent;
+
+              if (all.status) {
+                _this.setState({
+                  data: all.response
+                });
+              } else {
+                toast.error(all.response);
+              }
+
+              _context.next = 10;
+              break;
+
+            case 7:
+              _context.prev = 7;
+              _context.t0 = _context["catch"](0);
+              console.log(_context.t0);
+
+            case 10:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[0, 7]]);
+    })));
+
+    _this.state = {
+      data: []
+    };
+
+    _this.getData();
+
+    setInterval(function () {
+      _this.getData();
+    }, 5000);
+    return _this;
   }
 
   _createClass(LayoutClass, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(Layout, {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(Layout, {
         setOpen: this.props.changeSetOpen,
-        open: this.props.open
+        open: this.props.open,
+        data: this.state.data
       });
     }
   }]);
 
   return LayoutClass;
-}(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+}(react__WEBPACK_IMPORTED_MODULE_1__.Component);
 
 var mapStateToProps = function mapStateToProps(state) {
   return _objectSpread({}, state);
@@ -19391,12 +20123,12 @@ var mapStateToProps = function mapStateToProps(state) {
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     changeSetOpen: function changeSetOpen(open) {
-      return dispatch((0,_redux_actions_drawer_action__WEBPACK_IMPORTED_MODULE_4__.changeSetOpen)(open));
+      return dispatch((0,_redux_actions_drawer_action__WEBPACK_IMPORTED_MODULE_5__.changeSetOpen)(open));
     }
   };
 };
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_3__.connect)(mapStateToProps, mapDispatchToProps)(LayoutClass));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_4__.connect)(mapStateToProps, mapDispatchToProps)(LayoutClass));
 
 /***/ }),
 

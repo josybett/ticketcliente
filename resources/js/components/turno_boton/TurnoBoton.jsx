@@ -8,8 +8,15 @@ import { changeSetOpen } from '../../redux/actions/drawer.action';
 const useStyles = makeStyles((_) => ({
   addButton: {
     position: 'absolute',
-    bottom: 0,
-    right: 0
+    bottom: 30,
+    right: 30,
+    backgroundColor: '#FF9703',
+    color: '#FFF',
+    '& .MuiFab-label': {
+      '& .MuiSvgIcon-root': {
+        fontSize: '2.5em'
+      }
+    }
   }
 }));
 
