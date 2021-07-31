@@ -1,3 +1,5 @@
 - ## Get Started
     - [Instalacion](/{{route}}/{{version}}/instalacion)
-    - [Enviroment](/{{route}}/{{version}}/enviroment)
+    - [Estructura](/{{route}}/{{version}}/estructura)
+    - [Backend](/{{route}}/{{version}}/back)
+    - [Frontend](/{{route}}/{{version}}/front)
