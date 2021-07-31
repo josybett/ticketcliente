@@ -5,6 +5,9 @@ import AddIcon from '@material-ui/icons/Add';
 import { connect } from 'react-redux';
 import { changeSetOpen } from '../../redux/actions/drawer.action';
 
+/**
+ *  Styles que se aplican al botón
+ */
 const useStyles = makeStyles((_) => ({
   addButton: {
     position: 'absolute',
@@ -20,13 +23,21 @@ const useStyles = makeStyles((_) => ({
   }
 }));
 
+/**
+ * Función del botón para abrir el formulario de solicitar turno
+ * @param {*} props parámetro para controlar el evento del drawer
+ * @returns Html
+ */
 function TurnoBoton(props) {
+  /* Importar constante de style */
   const classes = useStyles();
 
+  /* Función del evento open del drawer  */
   const openDrawer = _ => {
     props.setOpen(true);
   }
 
+  /* Html */
   return (
     <Fab aria-label="Solicitar Turno" className={ classes.addButton } onClick={ openDrawer }>
         <AddIcon />
@@ -34,12 +45,16 @@ function TurnoBoton(props) {
   );
 }
 
+/**
+ * Clase que extiende el componente de la función del botón flotante, con atributos que requiere dicha función 
+ */
 class TurnoButtonClass extends Component {
     render() {
         return <TurnoBoton setOpen={ this.props.changeSetOpen } />;
     }
 }
 
+/* State de Redux pasado a las props de la clase */
 const mapStateToProps = state => ({
     ...state
 });

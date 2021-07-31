@@ -19150,6 +19150,10 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+/**
+ * Clase del componente singlepage de React
+ */
+
 
 
 
@@ -19345,6 +19349,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+/**
+ * Styles que se aplican en el formulario
+ */
+
 
 
 var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__.default)(function (_) {
@@ -19379,8 +19387,14 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_8__.default
     }
   };
 });
+/**
+ * Función para crear el formulario
+ * @param {*} props parámetro de etiqueta para controlar evento
+ * @returns Html del formulario
+ */
 
 function FormularioTurno(props) {
+  /* Variables y state usadas en el formlario */
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
       identification = _useState2[0],
@@ -19390,8 +19404,11 @@ function FormularioTurno(props) {
       _useState4 = _slicedToArray(_useState3, 2),
       name = _useState4[0],
       setName = _useState4[1];
+  /* Import constante de style en la función */
+
 
   var classes = useStyles();
+  /* Cambiar el valor de as variables declaradas anteriormente */
 
   var handleChange = function handleChange(event) {
     var _event$target = event.target,
@@ -19411,6 +19428,8 @@ function FormularioTurno(props) {
         break;
     }
   };
+  /* Acción del botón, invocar función para insertar en BD por método POST */
+
 
   var onSubmit = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(event) {
@@ -19454,6 +19473,8 @@ function FormularioTurno(props) {
       return _ref.apply(this, arguments);
     };
   }();
+  /* Html */
+
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_material_ui_core_Grid__WEBPACK_IMPORTED_MODULE_10__.default, {
     container: true,
@@ -19525,6 +19546,10 @@ function FormularioTurno(props) {
     })
   });
 }
+/* 
+* Clase que extiende el componente de la función del formulario, con atributos que requiere dicha función 
+*/
+
 
 var FormularioTurnoClass = /*#__PURE__*/function (_Component) {
   _inherits(FormularioTurnoClass, _Component);
@@ -19548,6 +19573,8 @@ var FormularioTurnoClass = /*#__PURE__*/function (_Component) {
 
   return FormularioTurnoClass;
 }(react__WEBPACK_IMPORTED_MODULE_1__.Component);
+/* State de Redux pasado a las props de la clase */
+
 
 var mapStateToProps = function mapStateToProps(state) {
   return _objectSpread({}, state);
@@ -19614,6 +19641,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/* Stylos de la tabla */
+
 
 
 var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_1__.default)(function (_) {
@@ -19643,9 +19672,20 @@ var StyledTableRow = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_2__.de
     }
   };
 })(_material_ui_core_TableRow__WEBPACK_IMPORTED_MODULE_4__.default);
+/**
+ * Función de tabla de turnos registrados en el orden de los atendidos y próximos por atender
+ * @param {*} props propiedad que contiene los datos a desplegar
+ * @returns Html de tabla
+ */
+
 function TablaTurno(props) {
+  /* Importar constante de style */
   var classes = useStyles();
+  /* Obtener por destructuración los datos del parámetro props */
+
   var data = props.data;
+  /* Html */
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_material_ui_core_TableContainer__WEBPACK_IMPORTED_MODULE_5__.default, {
     component: _material_ui_core_Paper__WEBPACK_IMPORTED_MODULE_6__.default,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_material_ui_core_Table__WEBPACK_IMPORTED_MODULE_7__.default, {
@@ -19768,6 +19808,10 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+/**
+ *  Styles que se aplican al botón
+ */
+
 
 var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__.default)(function (_) {
   return {
@@ -19785,13 +19829,22 @@ var useStyles = (0,_material_ui_core_styles__WEBPACK_IMPORTED_MODULE_4__.default
     }
   };
 });
+/**
+ * Función del botón para abrir el formulario de solicitar turno
+ * @param {*} props parámetro para controlar el evento del drawer
+ * @returns Html
+ */
 
 function TurnoBoton(props) {
+  /* Importar constante de style */
   var classes = useStyles();
+  /* Función del evento open del drawer  */
 
   var openDrawer = function openDrawer(_) {
     props.setOpen(true);
   };
+  /* Html */
+
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core_Fab__WEBPACK_IMPORTED_MODULE_5__.default, {
     "aria-label": "Solicitar Turno",
@@ -19800,6 +19853,10 @@ function TurnoBoton(props) {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_icons_Add__WEBPACK_IMPORTED_MODULE_6__.default, {})
   });
 }
+/**
+ * Clase que extiende el componente de la función del botón flotante, con atributos que requiere dicha función 
+ */
+
 
 var TurnoButtonClass = /*#__PURE__*/function (_Component) {
   _inherits(TurnoButtonClass, _Component);
@@ -19823,6 +19880,8 @@ var TurnoButtonClass = /*#__PURE__*/function (_Component) {
 
   return TurnoButtonClass;
 }(react__WEBPACK_IMPORTED_MODULE_0__.Component);
+/* State de Redux pasado a las props de la clase */
+
 
 var mapStateToProps = function mapStateToProps(state) {
   return _objectSpread({}, state);
@@ -19909,6 +19968,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/**
+ * Constructor de Redux con Provider en la división del id root
+ */
 
 
 
@@ -20173,11 +20236,23 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
 
+/**
+ * Función estándar de respuesta
+ * @param {*} resp parámetro response de la api
+ * @returns response de la api o error en el caso de falla en la conexión
+ */
+
 var customResponse = function customResponse(resp) {
   if (resp.status === 200) return resp.data;
   var response = resp.data.response;
   throw new Error(response ? response : 'Server error, please try again or later!');
 };
+/**
+ * Función estándar de error en la api
+ * @param {*} error parámetro del error recibido de la api
+ * @returns response con el error de api o error en el caso de falla en la conexión
+ */
+
 var customResponseError = function customResponseError(error) {
   var data = error.response.data;
   if (!data) throw new Error('Server error, please try again or later!');
@@ -20190,6 +20265,12 @@ var customResponseError = function customResponseError(error) {
 
   return error.message;
 };
+/**
+ * Función de consulta con método GET
+ * @param {*} url string de la url de la api
+ * @returns response de la api
+ */
+
 var getMany = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(url) {
     var data;
@@ -20225,6 +20306,13 @@ var getMany = /*#__PURE__*/function () {
     return _ref.apply(this, arguments);
   };
 }();
+/**
+ * Función para insertar com método POST
+ * @param {*} url string de la url de la api
+ * @param {*} data json del body
+ * @returns response de la api
+ */
+
 var insert = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(url, data) {
     var response;
@@ -20278,6 +20366,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _constants_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../constants/redux */ "./resources/js/constants/redux.js");
 
+/**
+ * Función tipo acción de Redux para cambiar status del drawer
+ * @param {*} open boolean
+ * @returns status del drawer
+ */
+
 var changeSetOpen = function changeSetOpen(open) {
   return {
     type: _constants_redux__WEBPACK_IMPORTED_MODULE_0__.SETOPEN,
@@ -20300,9 +20394,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _constants_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../constants/redux */ "./resources/js/constants/redux.js");
 
+/* Estado inicial */
+
 var initialState = {
   open: false
 };
+/**
+ * Función para el control de acciones de redux
+ * @param {*} state Objeto del estado
+ * @param {*} action string del nombre de la acción
+ * @returns cambio de redux
+ */
 
 var drawerReducer = function drawerReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
@@ -20338,6 +20440,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _reducers_drawer_reducer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./reducers/drawer.reducer */ "./resources/js/redux/reducers/drawer.reducer.js");
 
 
+/**
+ * Función para la configuración inicial de Redux
+ * @param {*} state Objet del estado
+ * @returns creación de redux
+ */
 
 function configureStore() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
@@ -20371,6 +20478,8 @@ __webpack_require__.r(__webpack_exports__);
 /* Contenido */
 
 
+/* URL de page */
+
 
 
 var AppRouter = function AppRouter() {
@@ -20378,7 +20487,7 @@ var AppRouter = function AppRouter() {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Switch, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, {
         exact: true,
-        path: '/turno',
+        path: '/',
         component: _layout__WEBPACK_IMPORTED_MODULE_1__.default
       })
     })

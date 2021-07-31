@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import Urls from './url';
 import { ToastContainer } from 'react-toastify';
 
+/**
+ * Clase del componente singlepage de React
+ */
 class AppRoot extends Component {
   render() {
     return (

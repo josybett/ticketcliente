@@ -1,5 +1,10 @@
 import axios from 'axios';
 
+/**
+ * Función estándar de respuesta
+ * @param {*} resp parámetro response de la api
+ * @returns response de la api o error en el caso de falla en la conexión
+ */
 export const customResponse = resp => {
   if (resp.status === 200) return resp.data;
   const { response } = resp.data;
@@ -7,6 +12,11 @@ export const customResponse = resp => {
   throw new Error(response ? response : 'Server error, please try again or later!');
 }
 
+/**
+ * Función estándar de error en la api
+ * @param {*} error parámetro del error recibido de la api
+ * @returns response con el error de api o error en el caso de falla en la conexión
+ */
 export const customResponseError = error => {
   const { data } = error.response;
   if (!data) throw new Error('Server error, please try again or later!');
@@ -18,6 +28,11 @@ export const customResponseError = error => {
   return error.message;
 }
 
+/**
+ * Función de consulta con método GET
+ * @param {*} url string de la url de la api
+ * @returns response de la api
+ */
 export const getMany = async (url) => {
   try {
     let data;
@@ -33,6 +48,12 @@ export const getMany = async (url) => {
   }
 }
 
+/**
+ * Función para insertar com método POST
+ * @param {*} url string de la url de la api
+ * @param {*} data json del body
+ * @returns response de la api
+ */
 export const insert = async (url, data) => {
   try {
     let response;

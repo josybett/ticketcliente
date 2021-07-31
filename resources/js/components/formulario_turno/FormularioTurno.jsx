@@ -13,6 +13,9 @@ import FingerprintIcon from '@material-ui/icons/Fingerprint';
 import PermIdentityIcon from '@material-ui/icons/PermIdentity';
 import InputAdornment from '@material-ui/core/InputAdornment';
 
+/**
+ * Styles que se aplican en el formulario
+ */
 const useStyles = makeStyles((_) => ({
   root: {
     minWidth: '400px',
@@ -44,11 +47,20 @@ const useStyles = makeStyles((_) => ({
   }
 }));
 
+/**
+ * Función para crear el formulario
+ * @param {*} props parámetro de etiqueta para controlar evento
+ * @returns Html del formulario
+ */
 function FormularioTurno (props) {
+  /* Variables y state usadas en el formlario */
   const [identification, setIdentification] = useState('');
   const [name, setName] = useState('');
+
+  /* Import constante de style en la función */
   const classes = useStyles();
 
+  /* Cambiar el valor de as variables declaradas anteriormente */
   const handleChange = event => {
     const { name, value } = event.target;
     switch (name) {
@@ -63,6 +75,7 @@ function FormularioTurno (props) {
     }
   }
 
+  /* Acción del botón, invocar función para insertar en BD por método POST */
   const onSubmit = async event => {
     event.preventDefault();
     try {
@@ -80,6 +93,7 @@ function FormularioTurno (props) {
     }
   }
 
+  /* Html */
   return (
     <Grid container className={classes.root}>
       <ValidatorForm
@@ -142,12 +156,16 @@ function FormularioTurno (props) {
   );
 }
 
+/* 
+* Clase que extiende el componente de la función del formulario, con atributos que requiere dicha función 
+*/
 class FormularioTurnoClass extends Component {
   render() {
     return <FormularioTurno setOpen={ this.props.changeSetOpen }/>;
   }
 }
 
+/* State de Redux pasado a las props de la clase */
 const mapStateToProps = state => ({
   ...state
 });

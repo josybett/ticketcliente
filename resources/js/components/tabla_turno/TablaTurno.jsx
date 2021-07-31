@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import DoneAllIcon from '@material-ui/icons/DoneAll';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 
+/* Stylos de la tabla */
 const useStyles = makeStyles((_) => ({
   table: {
     minWidth: 700,
@@ -33,10 +34,19 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
+/**
+ * Función de tabla de turnos registrados en el orden de los atendidos y próximos por atender
+ * @param {*} props propiedad que contiene los datos a desplegar
+ * @returns Html de tabla
+ */
 export default function TablaTurno(props) {
+  /* Importar constante de style */
   const classes = useStyles();
+
+  /* Obtener por destructuración los datos del parámetro props */
   const { data } = props;
 
+  /* Html */
   return (
     <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
